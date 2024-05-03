@@ -15,7 +15,7 @@ on:
 
 jobs:
     print-tag:
-        runs-on: ${{inputs.runner || 'ubuntu-latest'}}$
+        runs-on: ubuntu-latest
         steps:
         - name: "Print the input tag to STDOUT"
           run: echo  'hi'
