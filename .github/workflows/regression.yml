@@ -4,7 +4,7 @@ on:
     push:
         branches:
             - 'develop'
-            - 'master'
+            - 'main'
     workflow_call:
         inputs:
             runner:
@@ -14,10 +14,10 @@ on:
                 type: string 
 
 jobs:
-    unit_tests:
-        runs-on: ${{ inputs.runner || 'ubuntu-latest'}}
-        name: Unit Tests 
-        strategy:
-            fail-fast: false
-            matrix:
-                testscript: ['simple_function']
+    print-tag:
+        runs-on: ${{inputs.runner || 'ubuntu-latest'}}$
+        steps:
+        - name: "Print the input tag to STDOUT"
+          run: echo  'hi'
+
+
