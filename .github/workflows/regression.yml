@@ -1,0 +1,23 @@
+name: Regression and Unit Testing
+
+on:
+    push:
+        branches:
+            - 'develop'
+            - 'master'
+    workflow_call:
+        inputs:
+            runner:
+                description: 'The github runner to use'
+                default: 'ubuntu-latest'
+                required: false 
+                type: string 
+
+jobs:
+    unit_tests:
+        runs-on: ${{ inputs.runner || 'ubuntu-latest'}}
+        name: Unit Tests 
+        strategy:
+            fail-fast: false
+            matrix:
+                testscript: ['simple_function']
