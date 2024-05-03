@@ -14,9 +14,6 @@ on:
                 type: string 
 
 jobs:
-    pre-cleanup:
-        runs-on: ubuntu-latest
-
     print-tag:
         runs-on: ubuntu-latest
         steps:
